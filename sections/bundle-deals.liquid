@@ -77,9 +77,9 @@
                 style="--ratio-percent: {{ 1 | divided_by: product.featured_image.aspect_ratio | times: 100 }}%"
               >
                 <img
-                  src="{{ product.featured_image | image_url: width: 800 }}"
+                  data-src="{{ product.featured_image | image_url: width: 800 }}"
                   alt="{{ product.featured_image.alt | escape }}"
-                  loading="lazy"
+                  src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20width='1'%20height='1'%3E%3Crect%20width='100%25'%20height='100%25'%20opacity='0'/%3E%3C/svg%3E" data-class="LazyLoad"
                   width="auto"
                   height="auto"
                   class="bundle-deals__media-item-img bundle-deals__media-item-img-js"

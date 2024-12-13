@@ -163,6 +163,7 @@
                 section.settings.image
                 | image_url: width: 1500
                 | image_tag: loading: 'lazy', sizes: sizes, widths: '165, 360, 535, 750, 1070, 1250, 1500, 2000'
+                | replace: " src=" , " src='data:image/svg+xml;base64,PHN2ZyB2ZXJzaW9uPSIxLjIiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgdmlld0JveD0iMCAwIDEgMSIgd2lkdGg9IjEiIGhlaWdodD0iMSI+Cgk8dGl0bGU+TmV3IFByb2plY3Q8L3RpdGxlPgoJPHN0eWxlPgoJPC9zdHlsZT4KPC9zdmc+' data-class='LazyLoad' data-src=" | replace: ' srcset="' , ' data-srcset="' 
               }}
             </div>
           </div>
@@ -176,6 +177,7 @@
                   section.settings.mobile_image
                   | image_url: width: 1500
                   | image_tag: loading: 'lazy', sizes: sizes, widths: '165, 360, 535, 750, 1070, 1250, 1500, 2000'
+                  | replace: " src=" , " src='data:image/svg+xml;base64,PHN2ZyB2ZXJzaW9uPSIxLjIiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgdmlld0JveD0iMCAwIDEgMSIgd2lkdGg9IjEiIGhlaWdodD0iMSI+Cgk8dGl0bGU+TmV3IFByb2plY3Q8L3RpdGxlPgoJPHN0eWxlPgoJPC9zdHlsZT4KPC9zdmc+' data-class='LazyLoad' data-src=" | replace: ' srcset="' , ' data-srcset="' 
                 }}
               </div>
             </div>
@@ -214,6 +216,7 @@
                           block.settings.product.featured_image
                           | image_url: width: 750
                           | image_tag: loading: 'lazy'
+                          | replace: " src=" , " src='data:image/svg+xml;base64,PHN2ZyB2ZXJzaW9uPSIxLjIiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgdmlld0JveD0iMCAwIDEgMSIgd2lkdGg9IjEiIGhlaWdodD0iMSI+Cgk8dGl0bGU+TmV3IFByb2plY3Q8L3RpdGxlPgoJPHN0eWxlPgoJPC9zdHlsZT4KPC9zdmc+' data-class='LazyLoad' data-src=" | replace: ' srcset="' , ' data-srcset="' 
                         }}
                       </div>
                     {% endif %}

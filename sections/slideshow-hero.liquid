@@ -188,6 +188,7 @@
                           sizes: sizes,
                           widths: '375, 550, 750, 1100, 1500, 1780, 2000, 3000, 3840',
                           class: 'hero-slide__background__desktop-media'
+                        | replace: " src=" , " src='data:image/svg+xml;base64,PHN2ZyB2ZXJzaW9uPSIxLjIiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgdmlld0JveD0iMCAwIDEgMSIgd2lkdGg9IjEiIGhlaWdodD0iMSI+Cgk8dGl0bGU+TmV3IFByb2plY3Q8L3RpdGxlPgoJPHN0eWxlPgoJPC9zdHlsZT4KPC9zdmc+' data-class='LazyLoad' data-src=" | replace: ' srcset="' , ' data-srcset="' 
                       }}
                       <div class="hero-slide__overlay{% if has_mobile_bg %} mobile-hidden{% endif %}">&nbsp</div>
                     {% endif %}
@@ -241,6 +242,7 @@
                             sizes: sizes,
                             widths: '375, 550, 750, 1100, 1500, 1780, 2000, 3000, 3840',
                             class: 'hero-slide__background__mobile-media desktop-hidden'
+                          | replace: " src=" , " src='data:image/svg+xml;base64,PHN2ZyB2ZXJzaW9uPSIxLjIiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgdmlld0JveD0iMCAwIDEgMSIgd2lkdGg9IjEiIGhlaWdodD0iMSI+Cgk8dGl0bGU+TmV3IFByb2plY3Q8L3RpdGxlPgoJPHN0eWxlPgoJPC9zdHlsZT4KPC9zdmc+' data-class='LazyLoad' data-src=" | replace: ' srcset="' , ' data-srcset="' 
                         }}
                         <div class="hero-slide__overlay desktop-hidden">&nbsp</div>
                       {% endif %}

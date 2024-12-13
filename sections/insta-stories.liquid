@@ -98,12 +98,11 @@
                   <div class="insta-story-open-btn__pfp-ring-offset">
                     <div class="insta-story-open-btn__pfp">
                       {% if block.settings.profile_picture != blank %}
-                        <img
-                          src="{{ block.settings.profile_picture | image_url: width: 400 }}"
+                        <img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20width='1'%20height='1'%3E%3Crect%20width='100%25'%20height='100%25'%20opacity='0'/%3E%3C/svg%3E" data-class="LazyLoad"
+                          data-src="{{ block.settings.profile_picture | image_url: width: 400 }}"
                           alt="{{ block.settings.username }}"
                           width="auto"
-                          height="auto"
-                          loading="lazy"
+                          height="auto"                          
                         >
                       {% else %}
                         {% render 'material-icon', icon: 'person', filled: true %}
@@ -144,12 +143,11 @@
                   <div class='insta-story__info'>
                     <div class='insta-story-open-btn__pfp insta-story__pfp'>
                       {% if block.settings.profile_picture != blank %}
-                        <img
-                          src="{{ block.settings.profile_picture | image_url: width: 400 }}"
+                        <img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20width='1'%20height='1'%3E%3Crect%20width='100%25'%20height='100%25'%20opacity='0'/%3E%3C/svg%3E" data-class="LazyLoad"
+                          data-src="{{ block.settings.profile_picture | image_url: width: 400 }}"
                           alt="{{ block.settings.username }}"
                           width="auto"
-                          height="auto"
-                          loading="lazy"
+                          height="auto"                          
                         >
                       {% else %}
                         {% render 'material-icon', icon: 'person', filled: true %}
@@ -195,8 +193,8 @@
                         image_size: '1000x',
                         loop: false,
                         muted: true,
-                        playsinline: '',
-                        autoplay: false
+                        playsinline: ''
+                      | replace: 'preload="metadata" poster="' , 'preload="none" class="preload_autoplay" data-poster="' | replace: '<img src="' , '<img src="data:image/svg+xml;base64,PHN2ZyB2ZXJzaW9uPSIxLjIiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgdmlld0JveD0iMCAwIDEgMSIgd2lkdGg9IjEiIGhlaWdodD0iMSI+Cgk8dGl0bGU+TmV3IFByb2plY3Q8L3RpdGxlPgoJPHN0eWxlPgoJPC9zdHlsZT4KPC9zdmc+" data-class="LazyLoad" data-src="'
                     }}
                   </div>
                 {% elsif block.settings.story_1_image != blank %}
@@ -211,6 +209,7 @@
                       block.settings.story_1_image
                       | image_url: width: 1500
                       | image_tag: loading: 'lazy', widths: '165, 360, 535, 750, 1070, 1250, 1500'
+                      | replace: " src=" , " src='data:image/svg+xml;base64,PHN2ZyB2ZXJzaW9uPSIxLjIiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgdmlld0JveD0iMCAwIDEgMSIgd2lkdGg9IjEiIGhlaWdodD0iMSI+Cgk8dGl0bGU+TmV3IFByb2plY3Q8L3RpdGxlPgoJPHN0eWxlPgoJPC9zdHlsZT4KPC9zdmc+' data-class='LazyLoad' data-src=" | replace: ' srcset="' , ' data-srcset="' 
                     }}
                   </div>
                 {% endif %}
@@ -228,8 +227,8 @@
                         image_size: '1000x',
                         loop: false,
                         muted: true,
-                        playsinline: '',
-                        autoplay: false
+                        playsinline: ''
+                      | replace: 'preload="metadata" poster="' , 'preload="none" class="preload_autoplay" data-poster="' | replace: '<img src="' , '<img src="data:image/svg+xml;base64,PHN2ZyB2ZXJzaW9uPSIxLjIiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgdmlld0JveD0iMCAwIDEgMSIgd2lkdGg9IjEiIGhlaWdodD0iMSI+Cgk8dGl0bGU+TmV3IFByb2plY3Q8L3RpdGxlPgoJPHN0eWxlPgoJPC9zdHlsZT4KPC9zdmc+" data-class="LazyLoad" data-src="'
                     }}
                   </div>
                 {% elsif block.settings.story_2_image != blank %}
@@ -244,6 +243,7 @@
                       block.settings.story_2_image
                       | image_url: width: 1500
                       | image_tag: loading: 'lazy', widths: '165, 360, 535, 750, 1070, 1250, 1500'
+                      | replace: " src=" , " src='data:image/svg+xml;base64,PHN2ZyB2ZXJzaW9uPSIxLjIiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgdmlld0JveD0iMCAwIDEgMSIgd2lkdGg9IjEiIGhlaWdodD0iMSI+Cgk8dGl0bGU+TmV3IFByb2plY3Q8L3RpdGxlPgoJPHN0eWxlPgoJPC9zdHlsZT4KPC9zdmc+' data-class='LazyLoad' data-src=" | replace: ' srcset="' , ' data-srcset="' 
                     }}
                   </div>
                 {% endif %}
@@ -261,8 +261,8 @@
                         image_size: '1000x',
                         loop: false,
                         muted: true,
-                        playsinline: '',
-                        autoplay: false
+                        playsinline: ''
+                      | replace: 'preload="metadata" poster="' , 'preload="none" class="preload_autoplay" data-poster="' | replace: '<img src="' , '<img src="data:image/svg+xml;base64,PHN2ZyB2ZXJzaW9uPSIxLjIiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgdmlld0JveD0iMCAwIDEgMSIgd2lkdGg9IjEiIGhlaWdodD0iMSI+Cgk8dGl0bGU+TmV3IFByb2plY3Q8L3RpdGxlPgoJPHN0eWxlPgoJPC9zdHlsZT4KPC9zdmc+" data-class="LazyLoad" data-src="'
                     }}
                   </div>
                 {% elsif block.settings.story_3_image != blank %}
@@ -277,6 +277,7 @@
                       block.settings.story_3_image
                       | image_url: width: 1500
                       | image_tag: loading: 'lazy', widths: '165, 360, 535, 750, 1070, 1250, 1500'
+                      | replace: " src=" , " src='data:image/svg+xml;base64,PHN2ZyB2ZXJzaW9uPSIxLjIiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgdmlld0JveD0iMCAwIDEgMSIgd2lkdGg9IjEiIGhlaWdodD0iMSI+Cgk8dGl0bGU+TmV3IFByb2plY3Q8L3RpdGxlPgoJPHN0eWxlPgoJPC9zdHlsZT4KPC9zdmc+' data-class='LazyLoad' data-src=" | replace: ' srcset="' , ' data-srcset="' 
                     }}
                   </div>
                 {% endif %}
@@ -285,12 +286,11 @@
                     <div class="insta-story-open-btn__pfp-ring-offset">
                       <div class="insta-story-open-btn__pfp">
                         {% if block.settings.profile_picture != blank %}
-                          <img
-                            src="{{ block.settings.profile_picture | image_url: width: 400 }}"
+                          <img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20width='1'%20height='1'%3E%3Crect%20width='100%25'%20height='100%25'%20opacity='0'/%3E%3C/svg%3E" data-class="LazyLoad"
+                            data-src="{{ block.settings.profile_picture | image_url: width: 400 }}"
                             alt="{{ block.settings.username }}"
                             width="auto"
-                            height="auto"
-                            loading="lazy"
+                            height="auto"                            
                           >
                         {% else %}
                           {% render 'material-icon', icon: 'person', filled: true %}

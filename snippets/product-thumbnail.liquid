@@ -72,8 +72,8 @@
 >
   {% if section.settings.trust_badge != blank %}
     <div class='product-media__trust-badge product-media__trust-badge--{{ section.settings.trust_badge_position }} product-media__trust-badge--{{ section.settings.trust_badge_size }}'>
-      <img
-        src="{{ section.settings.trust_badge | image_url }}"
+      <img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20width='1'%20height='1'%3E%3Crect%20width='100%25'%20height='100%25'%20opacity='0'/%3E%3C/svg%3E" data-class="LazyLoad"
+        data-src="{{ section.settings.trust_badge | image_url }}"
         alt="{{ section.settings.trust_badge.alt | escape }}"
         loading="lazy"
         width="auto"
@@ -85,10 +85,10 @@
     {%- if has_video_modal or media.media_type == 'external_video' -%}
       <span class="product__media-icon motion-reduce quick-add-hidden">{% render 'icon-play' %}</span>
       <div class="product__media media">
-        {{ media.preview_image | image_url: width: 1946 | image_tag:
-          loading: lazy,
+        {{ media.preview_image | image_url: width: 1946 | image_tag:          
           sizes: sizes,
           widths: '246, 493, 600, 713, 823, 990, 1100, 1206, 1346, 1426, 1646, 1946'
+          | replace: " src=" , " src='data:image/svg+xml;base64,PHN2ZyB2ZXJzaW9uPSIxLjIiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgdmlld0JveD0iMCAwIDEgMSIgd2lkdGg9IjEiIGhlaWdodD0iMSI+Cgk8dGl0bGU+TmV3IFByb2plY3Q8L3RpdGxlPgoJPHN0eWxlPgoJPC9zdHlsZT4KPC9zdmc+' data-class='LazyLoad' data-src=" | replace: ' srcset="' , ' data-srcset="' 
         }}
       </div>
       <a href="{% if media.media_type == 'video' %}{{ media.sources[1].url }}{% else %}{{ media | external_video_url }}{% endif %}" class="product__media-toggle">
@@ -96,10 +96,10 @@
       </a>
     {%- else -%}
       <div class="product__media media">
-        {{ media.preview_image | image_url: width: 1946 | image_tag:
-          loading: lazy,
+        {{ media.preview_image | image_url: width: 1946 | image_tag:          
           sizes: sizes,
           widths: '246, 493, 600, 713, 823, 990, 1100, 1206, 1346, 1426, 1646, 1946'
+          | replace: " src=" , " src='data:image/svg+xml;base64,PHN2ZyB2ZXJzaW9uPSIxLjIiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgdmlld0JveD0iMCAwIDEgMSIgd2lkdGg9IjEiIGhlaWdodD0iMSI+Cgk8dGl0bGU+TmV3IFByb2plY3Q8L3RpdGxlPgoJPHN0eWxlPgoJPC9zdHlsZT4KPC9zdmc+' data-class='LazyLoad' data-src=" | replace: ' srcset="' , ' data-srcset="' 
         }}
       </div>
     {%- endif -%}
@@ -179,10 +179,10 @@
         </internal-video>
       {% else %}
         {{ media.preview_image | image_url: width: 1946 | image_tag:
-          class: image_class,
-          loading: lazy,
+          class: image_class,          
           sizes: sizes,
           widths: '246, 493, 600, 713, 823, 990, 1100, 1206, 1346, 1426, 1646, 1946'
+          | replace: " src=" , " src='data:image/svg+xml;base64,PHN2ZyB2ZXJzaW9uPSIxLjIiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgdmlld0JveD0iMCAwIDEgMSIgd2lkdGg9IjEiIGhlaWdodD0iMSI+Cgk8dGl0bGU+TmV3IFByb2plY3Q8L3RpdGxlPgoJPHN0eWxlPgoJPC9zdHlsZT4KPC9zdmc+' data-class='LazyLoad' data-src=" | replace: ' srcset="' , ' data-srcset="' 
         }}
       {% endif %}
     </div>
@@ -209,10 +209,10 @@
           {%- render 'icon-play' -%}
         {%- endif -%}
       </span>
-      {{ media.preview_image | image_url: width: 1946 | image_tag:
-        loading: lazy,
+      {{ media.preview_image | image_url: width: 1946 | image_tag:        
         sizes: sizes,
         widths: '246, 493, 600, 713, 823, 990, 1100, 1206, 1346, 1426, 1646, 1946'
+        | replace: " src=" , " src='data:image/svg+xml;base64,PHN2ZyB2ZXJzaW9uPSIxLjIiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgdmlld0JveD0iMCAwIDEgMSIgd2lkdGg9IjEiIGhlaWdodD0iMSI+Cgk8dGl0bGU+TmV3IFByb2plY3Q8L3RpdGxlPgoJPHN0eWxlPgoJPC9zdHlsZT4KPC9zdmc+' data-class='LazyLoad' data-src=" | replace: ' srcset="' , ' data-srcset="' 
       }}
     </button>
     <template>

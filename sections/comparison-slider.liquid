@@ -105,7 +105,7 @@
         {% endunless %}
         <div class="comparison-slider__overlay{% if section.settings.before_image != blank %} color-{{ section.settings.color_scheme }}{% endif %}">
           {%- if section.settings.before_image != blank -%}
-            {{ section.settings.before_image | image_url: width: 1000 | image_tag: loading: 'lazy', width: 450 }}
+            {{ section.settings.before_image | image_url: width: 1000 | image_tag: loading: 'lazy', width: 450 | replace: " src=" , " src='data:image/svg+xml;base64,PHN2ZyB2ZXJzaW9uPSIxLjIiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgdmlld0JveD0iMCAwIDEgMSIgd2lkdGg9IjEiIGhlaWdodD0iMSI+Cgk8dGl0bGU+TmV3IFByb2plY3Q8L3RpdGxlPgoJPHN0eWxlPgoJPC9zdHlsZT4KPC9zdmc+' data-class='LazyLoad' data-src=" | replace: ' srcset="' , ' data-srcset="' }}
           {%- endif -%}
         </div>
         <div class="comparison-slider__line comparison-slider__line--{{ section.settings.arrows_style }} color-{{ section.settings.line_color }}">
@@ -115,7 +115,7 @@
         <input type="range" class="comparison-slider__input" min="0" max="100" value="50">
         <div class="comparison-slider__underlay color-{{ section.settings.color_scheme }}">
           {%- if section.settings.after_image != blank -%}
-            {{ section.settings.after_image | image_url: width: 1000 | image_tag: loading: 'lazy', width: 450 }}
+            {{ section.settings.after_image | image_url: width: 1000 | image_tag: loading: 'lazy', width: 450 | replace: " src=" , " src='data:image/svg+xml;base64,PHN2ZyB2ZXJzaW9uPSIxLjIiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgdmlld0JveD0iMCAwIDEgMSIgd2lkdGg9IjEiIGhlaWdodD0iMSI+Cgk8dGl0bGU+TmV3IFByb2plY3Q8L3RpdGxlPgoJPHN0eWxlPgoJPC9zdHlsZT4KPC9zdmc+' data-class='LazyLoad' data-src=" | replace: ' srcset="' , ' data-srcset="' }}
           {%- else -%}
             {{ 'image' | placeholder_svg_tag: 'placeholder-svg' }}
           {%- endif -%}

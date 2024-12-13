@@ -1,0 +1,10 @@
+<script>
+    var menuDrawerContainer = document.getElementById('Details-menu-drawer-container');
+    menuDrawerContainer.addEventListener('click', function () {
+        setTimeout(function() {
+            if (!menuDrawerContainer.classList.contains('menu-opening') && menuDrawerContainer.hasAttribute('open')) {
+                menuDrawerContainer.classList.add('menu-opening');
+            }
+         }, 1000);
+    });  
+</script>

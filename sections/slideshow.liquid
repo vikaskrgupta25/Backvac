@@ -148,24 +148,24 @@
             {{
               block.settings.image
               | image_url: width: 3840
-              | image_tag:
-                loading: 'lazy',
+              | image_tag:                
                 height: height,
                 sizes: '100vw',
                 class: main_image_class,
                 widths: '375, 550, 750, 1100, 1500, 1780, 2000, 3000, 3840'
+                | replace: " src=" , " src='data:image/svg+xml;base64,PHN2ZyB2ZXJzaW9uPSIxLjIiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgdmlld0JveD0iMCAwIDEgMSIgd2lkdGg9IjEiIGhlaWdodD0iMSI+Cgk8dGl0bGU+TmV3IFByb2plY3Q8L3RpdGxlPgoJPHN0eWxlPgoJPC9zdHlsZT4KPC9zdmc+' data-class='LazyLoad' data-src=" | replace: ' srcset="' , ' data-srcset="' 
             }}
             {% if block.settings.mobile_image != blank %}
               {% assign height = block.settings.mobile_image.width | divided_by: block.settings.mobile_image.aspect_ratio | round %}
               {{
                 block.settings.mobile_image
                 | image_url: width: 3840
-                | image_tag:
-                  loading: 'lazy',
+                | image_tag:                  
                   height: height,
                   sizes: '100vw',
                   class: 'desktop-hidden',
                   widths: '375, 550, 750, 1100, 1500, 1780, 2000, 3000, 3840'
+                  | replace: " src=" , " src='data:image/svg+xml;base64,PHN2ZyB2ZXJzaW9uPSIxLjIiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgdmlld0JveD0iMCAwIDEgMSIgd2lkdGg9IjEiIGhlaWdodD0iMSI+Cgk8dGl0bGU+TmV3IFByb2plY3Q8L3RpdGxlPgoJPHN0eWxlPgoJPC9zdHlsZT4KPC9zdmc+' data-class='LazyLoad' data-src=" | replace: ' srcset="' , ' data-srcset="' 
               }}
             {% endif %}
           {%- else -%}

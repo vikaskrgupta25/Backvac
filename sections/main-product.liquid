@@ -930,7 +930,7 @@
                 {{ 'component-complementary-products.css' | asset_url | stylesheet_tag }}
                 {%- if block.settings.enable_quick_add -%}
                   <link rel="stylesheet" href="{{ 'quick-add.css' | asset_url }}" media="print" onload="this.media='all'">
-                  <script src="{{ 'quick-add.js' | asset_url }}" defer="defer"></script>
+                  <script type="lazyJs" src="{{ 'quick-add.js' | asset_url }}"></script>
                 {%- endif -%}
               </product-recommendations>
             {%- when 'icon_with_text' -%}
@@ -1072,8 +1072,8 @@
   {%- endfor -%}
 
   {%- if product.media.size > 0 -%}
-    <script src="{{ 'product-modal.js' | asset_url }}" defer="defer"></script>
-    <script src="{{ 'media-gallery.js' | asset_url }}" defer="defer"></script>
+    <script type="lazyJs" src="{{ 'product-modal.js' | asset_url }}"></script>
+    <script type="lazyJs" src="{{ 'media-gallery.js' | asset_url }}"></script>
   {%- endif -%}
 
   {%- if first_3d_model -%}

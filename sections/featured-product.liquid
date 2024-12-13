@@ -779,7 +779,7 @@
 </section>
 
 {%- if section.settings.image_zoom == 'hover' -%}
-  <script id="EnableZoomOnHover-featured" src="{{ 'magnify.js' | asset_url }}" defer="defer"></script>
+  <script id="EnableZoomOnHover-featured" src="{{ 'magnify.js' | asset_url }}"  type="lazyJs"></script>
 {%- endif %}
 {%- if request.design_mode -%}
   <script src="{{ 'theme-editor.js' | asset_url }}" defer="defer"></script>
@@ -873,8 +873,8 @@
 </script>
 
 {% if product.media.size > 0 %}
-  <script src="{{ 'product-modal.js' | asset_url }}" defer="defer"></script>
-  <script src="{{ 'media-gallery.js' | asset_url }}" defer="defer"></script>
+  <script type="lazyJs" src="{{ 'product-modal.js' | asset_url }}"></script>
+  <script type="lazyJs" src="{{ 'media-gallery.js' | asset_url }}"></script>
 {% endif %}
 
 {% schema %}
